@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100dvw;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 176, 5, 0.2);
+  backdrop-filter: blur(0.6rem);
+  z-index: 999;
+}
+
+.Proyek > h3 {
+  text-align: center;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar .logo p {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.navbar .menu-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  z-index: 99;
+}
+
+.menu-list li {
+  margin: 0 1rem;
+}
+
+.menu-list li a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.menu-list li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, black, transparent);
+  transition: width 0.3s ease-in-out;
+}
+
+.menu-list li a:hover::after {
+  width: 50px;
+}
+
+.menu button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+}
+
+/* Animasi Apalah */
+@keyframes muncullah {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* AU ah males */
+.welcome {
+  animation: muncullah 1s linear;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+  height: 100dvh;
+  width: 100vw;
+  text-align: center;
+  gap: 1rem;
+}
+
+.welcome img {
+  width: 300px;
+}
+
+.welcome h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.welcome h3 {
+  font-weight: 600;
+  color: #333;
+}
+
+.welcome p {
+  max-width: 600px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.welcome .select-button {
+  margin-top: 1rem;
+}
+
+.welcome .select-button .b1,
+.welcome .select-button .b2 {
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.welcome .select-button .b1 {
+  background-color: #ffe600;
+}
+
+.welcome .select-button .b1:hover {
+  transform: scale(1.02) translateY(-5%);
+  background-color: #fdfd3e;
+}
+
+.welcome .select-button .b2 {
+  background-color: black;
+  color: white;
+  box-shadow: 1px 1px 1px gray;
+}
+
+.welcome .select-button .b2:hover {
+  transform: scale(1.02) translateY(-5%);
+  background-color: #2e2e2e;
+}
+
+/* About */
+.about {
+  max-width: 100%;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about h4 {
+  text-align: center;
+}
+
+.wadah {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  align-items: center;
+}
+
+.teks {
+  font-size: 1rem;
+  color: #333;
+}
+
+.image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* ================= PROYEK ================= */
+.proyek h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.isi-proyek {
+  width: 100%;
+  overflow-x: auto; /* scroll hanya horizontal */
+  overflow-y: visible;
+}
+
+.scroll-wrapper {
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+/* ================= CARD ================= */
+.card {
+  min-width: 300px;
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* biar nggak mengecil saat scroll */
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h5 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card-content h6 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.card-content p {
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 0.8rem;
+}
+
+.jenis {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.sub-jenis {
+  width: 20px;
+  height: 20px;
+  background: #ddd;
+  border-radius: 50%;
+}
+
+.tombol {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tombol .sourceCode {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tombol .sourceCode:hover {
+  background: #ddd;
+}
+
+/* animasi media kueri */
+
+/* Media kueri nya */
+@media (max-width: 768px) {
+  .navbar .logo p {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    z-index: 999;
+  }
+
+  @media (max-width: 768px) {
+    .menu-list {
+      flex-direction: column;
+      gap: 2rem;
+      position: absolute;
+      top: -30%;
+      right: -100%;
+      background-color: white;
+      transition: 300ms ease-in-out all;
+      width: 200px;
+      padding-top: 25px;
+      height: 100dvh;
+      
+    }
+
+    .menu-list.active {
+      right: 0;
+      z-index: 99;
+    }
+  }
+}
+
+
+.card-wrapper {
+  width: 500px;
+  background-color: rgb(87, 87, 255);
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+  padding: 1rem;
+}
+
+.image-wrapper img {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 450px;
+  height: 200px;
+}
+
+.tombol-source button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.tombol-source .source {
+  background-color: white;
+  border: 1px solid black;
+}
+.tombol-source .selengkapnya {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+
+.card-content {
+  text-align: left !important;
+  color: black;
+}
+
+.card-content h6 {
+  color: black;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+    gap: 1.5rem;
+}
+
+.isi-proyek {
+  overflow-x: auto;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 0;
+  height: 0;
+  position: fixed;
+}
+
+.overlay.active {
+  width: 100vw;
+  height: 100dvh;
+}
+
+.Proyek > h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.kategori {
+  background-color: white;
+  padding: 0.5rem;
+  width: max-content;
+  border-radius: 30px;
+}
+
+.pengkategori {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.next-prev {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.next-prev button {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+
+.next-prev button:hover {
+  background-color: rgb(212, 212, 212);
+}
