@@ -114,7 +114,6 @@ body {
   height: 100dvh;
   width: 100vw;
   text-align: center;
-  gap: 1rem;
 }
 
 .welcome img {
@@ -322,7 +321,16 @@ body {
       width: 200px;
       padding-top: 25px;
       height: 100dvh;
-      
+    }
+
+    .welcome > h1 {
+      font-size: 2rem;
+    }
+    .welcome > h3 {
+      font-size: 1rem;
+    }
+    .welcome > p {
+      font-size: 0.8rem;
     }
 
     .menu-list.active {
@@ -331,7 +339,6 @@ body {
     }
   }
 }
-
 
 .card-wrapper {
   width: 500px;
@@ -377,13 +384,13 @@ body {
   color: black;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
 
 .wrapper {
   display: flex;
-    gap: 1.5rem;
+  gap: 1.5rem;
 }
 
 .isi-proyek {
@@ -434,10 +441,9 @@ body {
   border: 1px solid black;
   border-radius: 10px;
   background-color: white;
-  padding: .5rem;
+  padding: 0.5rem;
   cursor: pointer;
 }
-
 
 .next-prev button:hover {
   background-color: rgb(212, 212, 212);
